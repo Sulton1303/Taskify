@@ -60,11 +60,9 @@
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror"
                                                 placeholder="Masukkan Kata Sandi"
-                                                name="password" value="{{ old('password') }}>
+                                                name="password" value="{{ old('password') }}">
                                             @error('password')
-                                                <small class="text-danger">
-                                                    {{ $message }}
-                                                </small>
+                                                {{ $message }}
                                             @enderror
                                         </div>
 
@@ -97,6 +95,28 @@
     <script src="{{ asset('sbadmin2/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('sbadmin2/js/sb-admin-2.min.js') }}"></script>
 
+    <!-- Sweet alert scripts -->
+    <script src="{{ asset('sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
+
+    @session('success')
+        <script>
+            Swal.fire({
+                title: "Sukses",
+                text: "session('success')",
+                icon: "success"
+            });
+        </script>
+    @endsession
+
+    @session('error')
+        <script>
+            Swal.fire({
+                title: "Gagal",
+                text: "{{ session('error') }}",
+                icon: "error"
+            });
+        </script>
+    @endsession
 </body>
 
 </html>

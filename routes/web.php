@@ -10,15 +10,17 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-// Route Dashboard
-Route::get('dashboard', [DashboardController::class, 'index'] )->name('dashboard');
-
 // Route Login
 Route::get('login', [AuthController::class, 'login'] )->name('login');
 Route::post('login', [AuthController::class, 'loginProcess'] )->name('loginProcess');
 
-// Route User
-Route::get('user', [UserController::class, 'index'] )->name('user');
+Route::middleware('checkLogin')->group(function(){
+    // Route Dashboard
+    Route::get('dashboard', [DashboardController::class, 'index'] )->name('dashboard');
 
-// Route Tugas
-Route::get('tugas', [TugasController::class, 'index'] )->name('tugas');
+    // Route User
+    Route::get('user', [UserController::class, 'index'] )->name('user');
+
+    // Route Tugas
+    Route::get('tugas', [TugasController::class, 'index'] )->name('tugas');
+});
