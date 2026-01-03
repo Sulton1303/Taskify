@@ -43,19 +43,32 @@
                                             Taskify - Login
                                         </h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" method="POST" action="{{ route('loginProcess') }}">
+                                        @csrf
+
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="email" class="form-control form-control-user @error('email') is-invalid @enderror"
                                                 placeholder="Masukkan Email"
-                                                name="email">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                placeholder="Masukkan Kata Sandi"
-                                                name="password">
+                                                name="email" value="{{ old('email') }}">
+                                            @error('email')
+                                                <small class="text-danger">
+                                                    {{ $message }}
+                                                </small>
+                                            @enderror
                                         </div>
 
-                                        <button type="submit" href="#" class="btn btn-primary btn-user btn-block">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror"
+                                                placeholder="Masukkan Kata Sandi"
+                                                name="password" value="{{ old('password') }}>
+                                            @error('password')
+                                                <small class="text-danger">
+                                                    {{ $message }}
+                                                </small>
+                                            @enderror
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>
                                     </form>

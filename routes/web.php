@@ -15,6 +15,7 @@ Route::get('dashboard', [DashboardController::class, 'index'] )->name('dashboard
 
 // Route Login
 Route::get('login', [AuthController::class, 'login'] )->name('login');
+Route::post('login', [AuthController::class, 'loginProcess'] )->name('loginProcess');
 
 // Route User
 Route::get('user', [UserController::class, 'index'] )->name('user');
