@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'     => 'Muhammad',
             'email'    => 'muhammad@gmail.com',
-            'position' => 'User',
+            'position' => 'Pegawai',
             'password' => Hash::make('muhammad1234'),
             'is_tugas' => false,
         ]);
@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'     => 'Sulton',
             'email'    => 'sulton@gmail.com',
-            'position' => 'User',
+            'position' => 'Pegawai',
             'password' => Hash::make('sulton1234'),
             'is_tugas' => false,
         ]);

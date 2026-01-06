@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->enum('position', ['Admin', 'User']);
+            $table->enum('position', ['Admin', 'Pegawai']);
             $table->string('password');
             $table->boolean('is_tugas')->default(false);
             $table->rememberToken();
