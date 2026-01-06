@@ -46,7 +46,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                MENU KARYAWAN
+                MENU PEGAWAI
             </div>
 
             <!-- Nav Item - Tables -->
