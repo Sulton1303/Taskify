@@ -43,26 +43,29 @@
                                     </thead>
 
                                     <tbody>
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td class="text-center">
-                                                <span class="badge badge-dark badge-pill">Admin</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <span class="badge badge-danger badge-pill">Belum Ditugaskan</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="#" class="btn btn-warning btn-sm">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        
+                                        @foreach ($user as $item)
+                                            <tr>
+                                                <td class="text-center">{{ $loop->iteration }}</td>
+                                                <td>{{ $item->name }}</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-info">
+                                                        {{ $item->email }}
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    {{ $item->position }}
+                                                </td>
+                                                <td>{{ $item->is_tugas }}</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-sm btn-warning">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-danger">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
