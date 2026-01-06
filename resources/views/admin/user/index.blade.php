@@ -48,14 +48,32 @@
                                                 <td class="text-center">{{ $loop->iteration }}</td>
                                                 <td>{{ $item->name }}</td>
                                                 <td class="text-center">
-                                                    <span class="badge badge-info">
+                                                    <span class="badge badge-primary">
                                                         {{ $item->email }}
                                                     </span>
                                                 </td>
-                                                <td>
-                                                    {{ $item->position }}
+                                                <td class="text-center">
+                                                    @if ($item->position == 'Admin')
+                                                        <span class="badge badge-dark">
+                                                            {{ $item->position }}
+                                                        </span>
+                                                    @else
+                                                        <span class="badge badge-info">
+                                                            {{ $item->position }}
+                                                        </span>
+                                                    @endif
                                                 </td>
-                                                <td>{{ $item->is_tugas }}</td>
+                                                <td class="text-center">
+                                                    @if ($item->is_tugas == false)
+                                                        <span class="badge badge-danger">
+                                                            Belum Ditugaskan
+                                                        </span>
+                                                    @else
+                                                        <span class="badge badge-success">
+                                                            Sudah Ditugaskan
+                                                        </span>
+                                                    @endif
+                                                </td>
                                                 <td class="text-center">
                                                     <a href="#" class="btn btn-sm btn-warning">
                                                         <i class="fas fa-edit"></i>
